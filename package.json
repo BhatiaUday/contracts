@@ -13,8 +13,8 @@
     "private-network": "npx hardhat node",
     "private-network-fork": "npx hardhat node --fork https://mainnet.infura.io/v3/$(grep INFURA_KEY .env | cut -d '\"' -f2)",
     "deploy-localhost": "npx hardhat migrate --network localhost",
-    "deploy-goerli": "npx hardhat migrate --network goerli --verify --confirmations 4",
-    "deploy-mumbai": "npx hardhat migrate --network mumbai --verify --confirmations 7",
+    "deploy-holesky": "npx hardhat migrate --network holesky --verify --confirmations 10",
+    "deploy-amoy": "npx hardhat migrate --network amoy --verify --confirmations 7",
     "deploy-qtestnet": "npx hardhat migrate --network qtestnet --attempts 3 --verify --confirmations 7",
     "deploy-ethereum": "npx hardhat migrate --network ethereum --verify --attempts 3 --confirmations 4",
     "deploy-polygon": "npx hardhat migrate --network polygon",
@@ -26,10 +26,11 @@
     "lint-sol-fix": "prettier --write \"contracts/**/*.sol\""
   },
   "dependencies": {
-    "@solarity/solidity-lib": "2.5.5",
+    "@dlsl/dev-modules": "^2.5.5",
     "@nomiclabs/hardhat-ethers": "^2.2.2",
     "@openzeppelin/contracts": "^4.8.0",
     "@openzeppelin/contracts-upgradeable": "4.8.0",
+    "@solarity/solidity-lib": "2.5.5",
     "circomlib": "^2.0.5",
     "circomlibjs": "^0.1.7",
     "dotenv": "^10.0.0",
@@ -38,11 +39,11 @@
     "typechain": "^8.1.0"
   },
   "devDependencies": {
-    "@solarity/hardhat-migrate": "^1.4.0",
     "@metamask/eth-sig-util": "^4.0.0",
-    "@nomiclabs/hardhat-etherscan": "^3.1.0",
+    "@nomiclabs/hardhat-etherscan": "^3.1.8",
     "@nomiclabs/hardhat-truffle5": "^2.0.7",
     "@nomiclabs/hardhat-web3": "^2.0.0",
+    "@solarity/hardhat-migrate": "^1.4.0",
     "@truffle/deployer": "3.2.56",
     "@truffle/reporters": "1.1.2",
     "@typechain/ethers-v5": "^10.1.0",

@@ -9,7 +9,7 @@ module.exports = async (deployer) => {
   const fee = process.env.PLATFROM_FEE;
 
   if (!fee) {
-    throw new Error("Invalid PLATFROM_FEE");
+    fee = 0;
   }
 
   console.log("Deploying Poseidon Hasher...");

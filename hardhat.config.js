@@ -36,13 +36,8 @@ module.exports = {
       initialDate: "1970-01-01T00:00:00Z",
       gasMultiplier: 1.2,
     },
-    goerli: {
-      url: `https://goerli.infura.io/v3/${process.env.INFURA_KEY}`,
-      accounts: privateKey(),
-      gasMultiplier: 1.2,
-    },
-    mumbai: {
-      url: "https://rpc-mumbai.maticvigil.com/",
+    holesky: {
+      url: "https://ethereum-holesky-rpc.publicnode.com",
       accounts: privateKey(),
       gasMultiplier: 1.2,
     },
@@ -79,11 +74,11 @@ module.exports = {
   etherscan: {
     apiKey: {
       mainnet: `${process.env.ETHERSCAN_KEY}`,
-      goerli: `${process.env.ETHERSCAN_KEY}`,
+      holesky: `${process.env.ETHERSCAN_KEY}`,
       bsc: `${process.env.BSCSCAN_KEY}`,
       bscTestnet: `${process.env.BSCSCAN_KEY}`,
       polygon: `${process.env.POLYGON_KEY}`,
-      polygonMumbai: `${process.env.POLYGON_KEY}`,
+      amoy: `${process.env.POLYGON_KEY}`,
       qtestnet: "abc",
       qmainnet: "abc",
     },
@@ -97,6 +92,14 @@ module.exports = {
         },
       },
       {
+        network: "holesky",
+        chainId: 17000,
+        urls: {
+          apiURL: "https://api-holesky.etherscan.io/api",
+          browserURL: "https://holesky.etherscan.io/",
+        },
+      },
+      {
         network: "qmainnet",
         chainId: 35441,
         urls: {
@@ -104,6 +107,14 @@ module.exports = {
           browserURL: "https://explorer.q.org",
         },
       },
+      // {
+      //   network: "sepolia",
+      //   chainId: 11155111,
+      //   urls: {
+      //     apiURL: "https://api-sepolia.etherscan.io/api/",
+      //     browserURL: "https://sepolia.etherscan.io/",
+      //   },
+      // },
     ],
   },
   migrate: {
